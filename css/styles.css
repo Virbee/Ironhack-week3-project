@@ -50,4 +50,7 @@ section {
 footer {
   background-color: dodgerblue;
   height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
