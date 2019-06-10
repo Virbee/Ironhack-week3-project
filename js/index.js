@@ -1,4 +1,4 @@
-var characters = [
+const characters = [
   {
     name: "Stefan",
     img: "../images/001-boy.svg",
@@ -109,7 +109,7 @@ var characters = [
   }
 ];
 
-var questions = [
+const questions = [
   { value: "male", question: "Is the character a man ?" },
   { value: "female", question: "Is the character a woman ?" },
   {
@@ -149,10 +149,10 @@ var questions = [
 ///////////////////////////////////////
 
 function displayCharacters() {
-  var characterDisplayed = "";
-  guessWhoGame.characters.forEach(function(character) {
+  let characterDisplayed = "";
+  guessWhoGame.characters.forEach(character => {
     characterDisplayed += `<p class="character"`;
-    if (character == guessWhoGame.theOne[0]) {
+    if (character == guessWhoGame.theOne) {
       characterDisplayed += `id="theOne"`;
     }
     characterDisplayed += `>`;
@@ -164,8 +164,8 @@ function displayCharacters() {
 }
 
 function displayQuestions() {
-  var questionsDisplayed = "";
-  questions.forEach(function(question) {
+  let questionsDisplayed = "";
+  questions.forEach(question => {
     questionsDisplayed += `<option value="` + question.value + `">`;
     questionsDisplayed += question.question;
     questionsDisplayed += `</option>`;
@@ -177,10 +177,10 @@ function displayQuestions() {
 /////////////UPDATE THE BOARD//////////////
 ////////////////////////////////////////
 
-function updateTheBoard(a, b) {
-  displayMessage(a);
+function updateTheBoard(characteristicToTest, questionNode) {
+  displayMessage(characteristicToTest);
   removeCharacters();
-  removeUsedQuestion(b);
+  removeUsedQuestion(questionNode);
 }
 //supprime les personnages qui ne matchent pas
 
@@ -201,11 +201,11 @@ function removeCharacters() {
   });
 }
 
-function displayMessage(a) {
-  var answer = guessWhoGame.giveAnAnswer(a);
+function displayMessage(characteristic) {
+  var answer = guessWhoGame.giveAnAnswer(characteristic);
   console.log(answer);
   var messageToDisplay = "";
-  if (answer === true) {
+  if (answer) {
     messageToDisplay = "YES !";
   } else {
     messageToDisplay = "No...";
@@ -226,8 +226,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
   displayQuestions();
   const selectBox = document.getElementById("questions");
   selectBox.onchange = function() {
-    let a = selectBox.options[selectBox.selectedIndex].value;
-    let b = selectBox.options[selectBox.selectedIndex];
-    updateTheBoard(a, b);
+    const characteristic = selectBox.options[selectBox.selectedIndex].value;
+    const questionNode = selectBox.options[selectBox.selectedIndex];
+    updateTheBoard(characteristic, questionNode);
   };
 });

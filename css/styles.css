@@ -2,12 +2,19 @@ html {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
 /*------------------------------------
 ---------------HEADER-----------------
 ------------------------------------*/
 
 header {
   display: flex;
+  flex: 0;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
@@ -28,6 +35,7 @@ section {
   margin: 40px auto;
   border-radius: 84px;
   display: flex;
+  flex: 1;
   justify-content: center;
   align-items: center;
 }
@@ -50,7 +58,7 @@ section {
 }
 
 .character img {
-  max-width: 200px;
+  max-width: 150px;
   width: 100%;
   margin: 5px;
 }
@@ -75,6 +83,14 @@ footer {
   background-color: dodgerblue;
   height: 80px;
   display: flex;
-  justify-content: center;
+  flex: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+footer #message {
+  display: flex;
+  flex-direction: column;
   align-items: center;
 }
