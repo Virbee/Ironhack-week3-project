@@ -2,12 +2,24 @@ html {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
+/*------------------------------------
+---------------HEADER-----------------
+------------------------------------*/
+
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
 }
+
+#message {
+  font-size: 2em;
+  color: darkgoldenrod;
+}
+/*------------------------------------
+----------------BOARD-----------------
+------------------------------------*/
 
 section {
   background: darkgrey;
@@ -46,6 +58,14 @@ section {
 .character span {
   margin: 5px;
 }
+
+#theOne {
+  border: solid 2px yellow;
+}
+
+/*------------------------------------
+---------------FOOTER-----------------
+------------------------------------*/
 
 footer {
   background-color: dodgerblue;
