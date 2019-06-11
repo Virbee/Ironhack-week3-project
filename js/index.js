@@ -145,7 +145,7 @@ const questions = [
 ];
 
 ///////////////////////////////////////
-/////////FIRST DISPLAYINGS/////////////
+/////////////INITIALIZATION////////////
 ///////////////////////////////////////
 
 function displayCharacters() {
@@ -173,16 +173,28 @@ function displayQuestions() {
   document.querySelector("#questions").innerHTML += questionsDisplayed;
 }
 
+function displayHeader() {
+  document.querySelector("#message").innerHTML =
+    "Sélectionnez une question pour commencer";
+  document.querySelector("#nbr_coups").innerHTML = guessWhoGame.questionAsked;
+}
+
 ////////////////////////////////////////
-/////////////UPDATE THE BOARD//////////////
+/////////////UPDATE THE BOARD///////////
 ////////////////////////////////////////
 
 function updateTheBoard(characteristicToTest, questionNode) {
   displayMessage(characteristicToTest);
   removeCharacters();
   removeUsedQuestion(questionNode);
+  if (guessWhoGame.isFinished() && guessWhoGame.isLoose()) {
+    // mettre un délai
+    document.querySelector("html").innerHTML = "You totally loose";
+  } else if (guessWhoGame.isFinished() && guessWhoGame.isWon()) {
+    // mettre un délai
+    document.querySelector("html").innerHTML = "You totally won";
+  }
 }
-//supprime les personnages qui ne matchent pas
 
 function removeUsedQuestion(b) {
   b.remove();
@@ -190,8 +202,6 @@ function removeUsedQuestion(b) {
 
 function removeCharacters() {
   let element = document.querySelectorAll(".character");
-  // pour chaque perso du tableau
-  //si answer est vrai, flip tous les personnages dont la valeur est fausse
   guessWhoGame.charactersEliminated.forEach(character => {
     for (let i = 0; i < element.length; i++) {
       if (element[i].textContent === character.name) {
@@ -203,27 +213,26 @@ function removeCharacters() {
 
 function displayMessage(characteristic) {
   var answer = guessWhoGame.giveAnAnswer(characteristic);
-  console.log(answer);
-  var messageToDisplay = "";
+  var messageToDisplay = characteristic;
   if (answer) {
-    messageToDisplay = "YES !";
+    messageToDisplay += `<span>YES !</span>`;
   } else {
-    messageToDisplay = "No...";
+    messageToDisplay += `<span>No...</span>`;
   }
   document.querySelector("#message").innerHTML = messageToDisplay;
+  document.querySelector("#nbr_coups").innerHTML = guessWhoGame.questionAsked;
 }
 
 ////////////////////////////////////////
 ///////////////SET THE GAME ////////////
 ////////////////////////////////////////
 
-//instance a new game
 var guessWhoGame = new GuessWhoGame(characters);
 
-//the document is loaded
 document.addEventListener("DOMContentLoaded", function(event) {
   displayCharacters();
   displayQuestions();
+  displayHeader();
   const selectBox = document.getElementById("questions");
   selectBox.onchange = function() {
     const characteristic = selectBox.options[selectBox.selectedIndex].value;
@@ -231,3 +240,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
     updateTheBoard(characteristic, questionNode);
   };
 });
+
+//on choisit une question tant que le jeu n'est pas fini (!isFinished)
