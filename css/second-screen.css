@@ -1,0 +1,86 @@
+/*------------------------------------
+---------------HEADER-----------------
+------------------------------------*/
+
+header {
+  display: flex;
+  flex: 0;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+}
+
+#message {
+  font-size: 2em;
+  color: darkgoldenrod;
+}
+/*------------------------------------
+----------------BOARD-----------------
+------------------------------------*/
+
+#board-container {
+  background: darkgrey;
+  width: 80%;
+  height: 80vh;
+  margin: 40px auto;
+  border-radius: 84px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+#my_board {
+  width: 90%;
+  height: 90%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.character {
+  background: dodgerblue;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.character img {
+  max-width: 150px;
+  width: 100%;
+  margin: 5px;
+}
+
+.character span {
+  margin: 5px;
+}
+
+#theOne {
+  border: solid 2px yellow;
+}
+
+.eliminated {
+  background: black;
+}
+
+/*------------------------------------
+---------------FOOTER-----------------
+------------------------------------*/
+
+footer {
+  background-color: dodgerblue;
+  height: 80px;
+  display: flex;
+  flex: 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+footer #message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

@@ -1,0 +1,46 @@
+#bandeau {
+  background-color: black;
+  margin: 0;
+  padding: 20px;
+  height: 20vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#bandeau p {
+  width: 70%;
+}
+
+#container {
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/fs-background.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.play-button {
+  margin: 30px;
+  justify-content: center;
+  height: 60px;
+  width: 100px;
+  background-color: grey;
+  border: solid 2px lightgrey;
+  border-radius: 10%;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-decoration: none;
+}
+
+.play-button a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+.play-button:hover {
+  background-color: goldenrod;
+}

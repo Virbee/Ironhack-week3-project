@@ -1,2 +1,14 @@
 @import "./first-screen.css";
 @import "./second-screen.css";
+
+html {
+  font-family: "VT323", monospace, Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+}

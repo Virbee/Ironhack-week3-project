@@ -1,5 +1,5 @@
 html {
-  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  font-family: "VT323", monospace, Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -7,6 +7,10 @@ body {
   flex-direction: column;
   height: 100vh;
   margin: 0;
+}
+
+h2 {
+  font-size: 2em;
 }
 
 /*------------------------------------
