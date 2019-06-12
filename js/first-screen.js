@@ -4,11 +4,10 @@ const firstSen =
 const secondSen =
   "Among the throngs of immigrants, visitors and people looking for work are hidden smugglers, spies and terrorists.";
 const thirdSen =
-  "Yesterday an indicator informed you that a kolechian terrorist would try to pass the border.";
-const fourthSen = "You have to demask him/her before he/she commits an attack.";
-const fifthSen =
-  "Someone who wants to stay anonymous saw him/her in person ; you can ask him 3 questions.";
-const sixthSen = "No more.";
+  "You heard from a kolechian informant that terrorist would try to cross the border.";
+const fourthSen = "You have to unmask them before they commit an attack.";
+const fifthSen = "Someone who knows him has agreed to answer 3 questions.";
+const sixthSen = "Not a single more.";
 
 ///////////////////////////////////////
 //////////FIRST SCREEN/////////////////
@@ -16,11 +15,15 @@ const sixthSen = "No more.";
 
 function displayIntro() {
   let c = 0;
-  setInterval(() => {
+  const interval = setInterval(() => {
+    console.log("tick");
     if (c < titleIntroduction.length) {
       document.querySelector("#bandeau h2").textContent += titleIntroduction[c];
       c++;
       console.log(titleIntroduction[c]);
+    } else {
+      clearInterval(interval);
+      displayFirstSen();
     }
   }, 100);
 }
@@ -28,75 +31,84 @@ function displayIntro() {
 function displayFirstSen() {
   document.querySelector("#bandeau p").textContent = "";
   let c = 0;
-  setInterval(() => {
+  const interval = setInterval(() => {
     if (c < firstSen.length) {
       document.querySelector("#bandeau p").textContent += firstSen[c];
       c++;
+    } else {
+      clearInterval(interval);
+      displaySecondSen();
     }
-  }, 70);
+  }, 80);
 }
 
 function displaySecondSen() {
   document.querySelector("#bandeau p").textContent = "";
   let c = 0;
-  setInterval(() => {
+  const interval = setInterval(() => {
     if (c < secondSen.length) {
       document.querySelector("#bandeau p").textContent += secondSen[c];
       c++;
+    } else {
+      clearInterval(interval);
+      displayThirdSen();
     }
-  }, 70);
+  }, 80);
 }
 
 function displayThirdSen() {
   document.querySelector("#bandeau p").textContent = "";
   let c = 0;
-  setInterval(() => {
+  const interval = setInterval(() => {
     if (c < thirdSen.length) {
       document.querySelector("#bandeau p").textContent += thirdSen[c];
       c++;
+    } else {
+      clearInterval(interval);
+      displayFourthSen();
     }
-  }, 70);
+  }, 80);
 }
 
 function displayFourthSen() {
   document.querySelector("#bandeau p").textContent = "";
   let c = 0;
-  setInterval(() => {
+  const interval = setInterval(() => {
     if (c < fourthSen.length) {
       document.querySelector("#bandeau p").textContent += fourthSen[c];
       c++;
+    } else {
+      clearInterval(interval);
+      displayFifthSen();
     }
-  }, 70);
+  }, 80);
 }
 
 function displayFifthSen() {
   document.querySelector("#bandeau p").textContent = "";
   let c = 0;
-  setInterval(() => {
+  const interval = setInterval(() => {
     if (c < fifthSen.length) {
       document.querySelector("#bandeau p").textContent += fifthSen[c];
       c++;
+    } else {
+      clearInterval(interval);
+      displaySixthSen();
     }
-  }, 70);
+  }, 80);
 }
 
 function displaySixthSen() {
   document.querySelector("#bandeau p").textContent = "";
   let c = 0;
-  setInterval(() => {
+  const interval = setInterval(() => {
     if (c < sixthSen.length) {
       document.querySelector("#bandeau p").textContent += sixthSen[c];
       c++;
     }
-  }, 70);
+  }, 80);
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
   setTimeout(displayIntro, 2000);
-  setTimeout(displayFirstSen, 5000);
-  setTimeout(displaySecondSen, 16000);
-  setTimeout(displayThirdSen, 30000);
-  setTimeout(displayFourthSen, 41000);
-  setTimeout(displayFifthSen, 50000);
-  setTimeout(displaySixthSen, 60000);
 });

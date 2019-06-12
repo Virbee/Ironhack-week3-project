@@ -1,111 +1,288 @@
 const characters = [
   {
-    name: "Stefan",
-    img: "../images/001-boy.svg",
-    male: true,
-    female: false,
-    blondHaired: false,
-    brownHaired: false,
-    darkHaired: true,
-    pinkHaired: false,
-    redHaired: false,
-    whiteHaired: false,
+    name: "Katia",
+    img: "../images/female4.png",
+    male: false,
+    female: true,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: true,
+    brownSkinned: false,
+    almostBald: false,
     longHaired: false,
     shortHaired: true,
-    earrings: false,
+    mustache: false,
+    beard: false,
     glasses: false,
-    hat: false,
-    necklace: false
-  },
-  {
-    name: "Pablo",
-    img: "../images/003-nerd.svg",
-    male: true,
-    female: false,
-    blondHaired: false,
-    brownHaired: true,
-    darkHaired: false,
-    pinkHaired: false,
-    redHaired: false,
-    whiteHaired: false,
-    longHaired: false,
-    shortHaired: true,
-    earrings: false,
-    glasses: true,
-    hat: false,
-    necklace: false
+    hat: false
   },
   {
     name: "Laura",
-    img: "../images/021-girl.svg",
+    img: "../images/female1.png",
     male: false,
     female: true,
-    blondHaired: false,
-    brownHaired: false,
-    darkHaired: true,
-    pinkHaired: false,
-    redHaired: false,
-    whiteHaired: false,
-    longHaired: true,
-    shortHaired: false,
-    earrings: false,
-    glasses: false,
-    hat: false,
-    necklace: false
-  },
-  {
-    name: "Karl",
-    img: "../images/028-engineer-1.svg",
-    male: true,
-    female: false,
-    blondHaired: false,
-    brownHaired: false,
-    darkHaired: true,
-    pinkHaired: false,
-    redHaired: false,
-    whiteHaired: false,
-    longHaired: true,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: false,
+    brownSkinned: true,
+    almostBald: false,
+    longHaired: false,
     shortHaired: true,
-    earrings: false,
+    mustache: false,
+    beard: false,
     glasses: false,
-    hat: true,
-    necklace: false
+    hat: false
   },
   {
-    name: "Ifemelu",
-    img: "../images/030-policewoman.svg",
+    name: "Lelia",
+    img: "../images/female5.png",
     male: false,
     female: true,
-    blondHaired: false,
-    brownHaired: false,
-    darkHaired: true,
-    pinkHaired: false,
-    redHaired: false,
-    whiteHaired: false,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: true,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: false,
+    shortHaired: true,
+    mustache: false,
+    beard: false,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Maria",
+    img: "../images/female6.png",
+    male: false,
+    female: true,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: true,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: false,
+    shortHaired: true,
+    mustache: false,
+    beard: false,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Nadia",
+    img: "../images/female2.png",
+    male: false,
+    female: true,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: true,
+    blueSkinned: false,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: false,
     longHaired: true,
     shortHaired: false,
-    earrings: false,
+    mustache: false,
+    beard: false,
     glasses: false,
-    hat: true,
-    necklace: false
+    hat: false
   },
   {
     name: "Naïma",
-    img: "../images/026-old-woman.svg",
+    img: "../images/female3.png",
     male: false,
     female: true,
-    blondHaired: false,
-    brownHaired: false,
-    darkHaired: false,
-    pinkHaired: false,
-    redHaired: false,
-    whiteHaired: true,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: true,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: true,
+    shortHaired: false,
+    mustache: false,
+    beard: false,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Karl",
+    img: "../images/male3.png",
+    male: true,
+    female: false,
+    yellowSkinned: true,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: true,
+    longHaired: false,
+    shortHaired: false,
+    mustache: false,
+    beard: false,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Momo",
+    img: "../images/male6.png",
+    male: true,
+    female: false,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: true,
+    brownSkinned: false,
+    almostBald: false,
     longHaired: false,
     shortHaired: true,
-    earrings: false,
+    mustache: true,
+    beard: false,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Nadir",
+    img: "../images/male8.png",
+    male: true,
+    female: false,
+    yellowSkinned: true,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: false,
+    shortHaired: true,
+    mustache: false,
+    beard: false,
     glasses: true,
-    hat: false,
-    necklace: false
+    hat: false
+  },
+  {
+    name: "Pablo",
+    img: "../images/male2.png",
+    male: true,
+    female: false,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: true,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: false,
+    shortHaired: true,
+    mustache: false,
+    beard: false,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Piotr",
+    img: "../images/male4.png",
+    male: true,
+    female: false,
+    yellowSkinned: false,
+    greenSkinned: true,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: false,
+    shortHaired: false,
+    mustache: true,
+    beard: false,
+    glasses: false,
+    hat: true
+  },
+  {
+    name: "Sergueï",
+    img: "../images/male5.png",
+    male: true,
+    female: false,
+    yellowSkinned: false,
+    greenSkinned: true,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: true,
+    longHaired: false,
+    shortHaired: false,
+    mustache: true,
+    beard: true,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Stefan",
+    img: "../images/male1.png",
+    male: true,
+    female: false,
+    yellowSkinned: false,
+    greenSkinned: false,
+    purpleSkinned: false,
+    blueSkinned: true,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: false,
+    shortHaired: false,
+    mustache: true,
+    beard: false,
+    glasses: false,
+    hat: true
+  },
+  {
+    name: "Viktor",
+    img: "../images/male9.png",
+    male: true,
+    female: false,
+    yellowSkinned: false,
+    greenSkinned: true,
+    purpleSkinned: false,
+    blueSkinned: false,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: true,
+    longHaired: false,
+    shortHaired: true,
+    mustache: true,
+    beard: false,
+    glasses: false,
+    hat: false
+  },
+  {
+    name: "Vladimir",
+    img: "../images/male7.png",
+    male: true,
+    female: false,
+    yellowSkinned: false,
+    greenSkinned: true,
+    purpleSkinned: false,
+    blueSkinned: true,
+    pinkSkinned: false,
+    brownSkinned: false,
+    almostBald: false,
+    longHaired: false,
+    shortHaired: true,
+    mustache: true,
+    beard: false,
+    glasses: true,
+    hat: true
   }
 ];
 
@@ -113,35 +290,36 @@ const questions = [
   { value: "male", question: "Is the character a man ?" },
   { value: "female", question: "Is the character a woman ?" },
   {
-    value: "blondHaired",
-    question: "Is the character blond-haired ?"
+    value: "blueSkinned",
+    question: "Is the character blue-skinned ?"
   },
   {
-    value: "brownHaired",
-    question: "Is the character brown-haired ?"
+    value: "brownSkinned",
+    question: "Is the character brown-skinned ?"
   },
   {
-    value: "darkHaired",
-    question: "Is the character dark-haired ?"
+    value: "greenSkinned",
+    question: "Is the character green-skinned ?"
   },
   {
-    value: "pinkHaired",
-    question: "Is the character pinkHaired ?"
+    value: "pinkSkinned",
+    question: "Is the character pink-skinned ?"
   },
   {
-    value: "redHaired",
-    question: "Is the character red-haired ?"
+    value: "purpleSkinned",
+    question: "Is the character purple-skinned ?"
   },
   {
-    value: "whiteHaired",
-    question: "Is the character white-haired ? ?"
+    value: "yellowSkinned",
+    question: "Is the character yellow-skinned ? ?"
   },
-  { value: "long-haired", question: "Is the character long-haired ?" },
-  { value: "short-haired", question: "Is the character short-haired ?" },
-  { value: "earrings", question: "Does the character wear earrings ?" },
+  { value: "almostBald", question: "Is the character almost bald ?" },
+  { value: "longHaired", question: "Is the character long-haired ?" },
+  { value: "shortHaired", question: "Is the character short-haired ?" },
   { value: "glasses", question: "Does the character wear glasses ?" },
   { value: "hat", question: "Does the character wear a hat ?" },
-  { value: "necklace", question: "Does the character wear a necklace ?" }
+  { value: "beard", question: "Does the character have a beard ?" },
+  { value: "mustache", question: "Does the character have a mustache?" }
 ];
 
 ///////////////////////////////////////
@@ -174,9 +352,21 @@ function displayQuestions() {
 }
 
 function displayHeader() {
-  document.querySelector("#message").innerHTML =
-    "Sélectionnez une question pour commencer";
-  document.querySelector("#nbr_coups").innerHTML = guessWhoGame.questionAsked;
+  document.querySelector(
+    "#message"
+  ).innerHTML = `Pick a question. Remember you have only ${
+    guessWhoGame.questionAsked
+  } try.`;
+}
+
+function displayCounter() {
+  var i = 0;
+  while (i < guessWhoGame.questionAsked) {
+    document.querySelector(
+      "#counter"
+    ).innerHTML += `<img src="./images/counter-logo.png"/>`;
+    i++;
+  }
 }
 
 ////////////////////////////////////////
@@ -184,16 +374,19 @@ function displayHeader() {
 ////////////////////////////////////////
 
 function updateTheBoard(characteristicToTest, questionNode) {
-  displayMessage(characteristicToTest);
+  updateMessage(characteristicToTest);
   removeCharacters();
   removeUsedQuestion(questionNode);
   if (guessWhoGame.isFinished() && guessWhoGame.isLoose()) {
     // mettre un délai
-    document.querySelector("html").innerHTML = "You totally loose";
+    document.querySelector("#message").textContent =
+      "You failed to unmask the terrorist. You'll be sent to education camp.";
   } else if (guessWhoGame.isFinished() && guessWhoGame.isWon()) {
     // mettre un délai
-    document.querySelector("html").innerHTML = "You totally won";
+    document.querySelector("#message").textContent =
+      "You unmask the terrorist, Arstotzka is proud of you. Glory to Arstotzka !";
   }
+  updateCounter();
 }
 
 function removeUsedQuestion(b) {
@@ -211,7 +404,7 @@ function removeCharacters() {
   });
 }
 
-function displayMessage(characteristic) {
+function updateMessage(characteristic) {
   var answer = guessWhoGame.giveAnAnswer(characteristic);
   var messageToDisplay = characteristic;
   if (answer) {
@@ -220,7 +413,12 @@ function displayMessage(characteristic) {
     messageToDisplay += `<span>No...</span>`;
   }
   document.querySelector("#message").innerHTML = messageToDisplay;
-  document.querySelector("#nbr_coups").innerHTML = guessWhoGame.questionAsked;
+}
+
+function updateCounter() {
+  var counter = document.querySelector("#counter");
+  var logo = document.querySelector("#counter img");
+  counter.removeChild(logo);
 }
 
 ////////////////////////////////////////
@@ -233,6 +431,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   displayCharacters();
   displayQuestions();
   displayHeader();
+  displayCounter();
   const selectBox = document.getElementById("questions");
   selectBox.onchange = function() {
     const characteristic = selectBox.options[selectBox.selectedIndex].value;
@@ -240,5 +439,3 @@ document.addEventListener("DOMContentLoaded", function(event) {
     updateTheBoard(characteristic, questionNode);
   };
 });
-
-//on choisit une question tant que le jeu n'est pas fini (!isFinished)

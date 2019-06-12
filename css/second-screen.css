@@ -3,26 +3,42 @@
 ------------------------------------*/
 
 header {
+  color: white;
   display: flex;
   flex: 0;
   justify-content: space-between;
   align-items: center;
   margin: 10px;
 }
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+}
 
 #message {
-  font-size: 2em;
-  color: darkgoldenrod;
+  color: black;
+  width: 50%;
+}
+
+#questions {
+  width: 15%;
+}
+
+#counter {
+  width: 15%;
+  justify-content: space-between;
+}
+#counter img {
+  width: 20%;
 }
 /*------------------------------------
 ----------------BOARD-----------------
 ------------------------------------*/
 
 #board-container {
-  background: darkgrey;
   width: 80%;
   height: 80vh;
-  margin: 40px auto;
+  margin: 10px auto;
   border-radius: 84px;
   display: flex;
   flex: 1;
@@ -34,12 +50,13 @@ header {
   width: 90%;
   height: 90%;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .character {
-  background: dodgerblue;
+  background: lightgrey;
+  border-radius: 10px;
   margin: 10px 10px;
   display: flex;
   flex-direction: column;
@@ -70,7 +87,7 @@ header {
 ------------------------------------*/
 
 footer {
-  background-color: dodgerblue;
+  background-color: goldenrod;
   height: 80px;
   display: flex;
   flex: 0;

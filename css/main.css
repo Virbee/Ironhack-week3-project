@@ -2,7 +2,8 @@
 @import "./second-screen.css";
 
 html {
-  font-family: "VT323", monospace, Arial, Helvetica, sans-serif;
+  font-family: "VT323", monospace;
+  font-size: 18px;
 }
 
 body {
