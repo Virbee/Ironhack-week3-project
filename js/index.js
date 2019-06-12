@@ -241,7 +241,7 @@ const characters = [
     almostBald: false,
     longHaired: false,
     shortHaired: false,
-    mustache: true,
+    mustache: false,
     beard: false,
     glasses: false,
     hat: true
@@ -322,6 +322,25 @@ const questions = [
   { value: "mustache", question: "Does the character have a mustache?" }
 ];
 
+const news = [
+  {
+    title: "ANALYSTS UPBEAT",
+    text: "Increased trade and cooperation predicted"
+  },
+  { title: "CHECKPOINT LOCKDOWN", text: "More guards, more scrutiny" },
+  {
+    title: "GRESTLIN CHECKPOINT A SUCCESS",
+    text: "Entry restrictions to relax"
+  },
+  {
+    title: "KOLECHIAN CLEANS HOUSE",
+    text: "Round of disappearance blamed on faulty evidence"
+  },
+  {
+    title: "IMPOR PROTESTS UNBALANCED TRADE RESTRICTIONS",
+    text: "Claims Arstotzka unfairly taxes imporian goods"
+  }
+];
 ///////////////////////////////////////
 /////////////INITIALIZATION////////////
 ///////////////////////////////////////
@@ -369,6 +388,19 @@ function displayCounter() {
   }
 }
 
+function displayNews() {
+  let c = 0;
+  const interval = setInterval(() => {
+    if (c < news.length) {
+      document.querySelector("#news h1").textContent = news[c].title;
+      document.querySelector("#news h4").textContent = news[c].text;
+      c++;
+    } else {
+      c = 0;
+    }
+  }, 5000);
+}
+
 ////////////////////////////////////////
 /////////////UPDATE THE BOARD///////////
 ////////////////////////////////////////
@@ -398,7 +430,7 @@ function removeCharacters() {
   guessWhoGame.charactersEliminated.forEach(character => {
     for (let i = 0; i < element.length; i++) {
       if (element[i].textContent === character.name) {
-        element[i].setAttribute("class", "character eliminated");
+        element[i].setAttribute("class", "character fade-out");
       }
     }
   });
@@ -432,6 +464,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   displayQuestions();
   displayHeader();
   displayCounter();
+  displayNews();
   const selectBox = document.getElementById("questions");
   selectBox.onchange = function() {
     const characteristic = selectBox.options[selectBox.selectedIndex].value;
