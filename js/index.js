@@ -423,6 +423,10 @@ function updateTheBoard(characteristicToTest, questionNode) {
       `<h1>YOU FAILED TO UNMASK THE TERRORIST</h1><img src="` +
       guessWhoGame.theOne.img +
       `"/><p>You'll be sent to education camp.</p><button id="loose-button">PLAY AGAIN</button>`;
+    let looseButton = document.querySelector("#loose-button");
+    looseButton.onclick = function() {
+      location.reload();
+    };
   } else if (guessWhoGame.isFinished() && guessWhoGame.isWon()) {
     document.querySelector("nav").setAttribute("class", "hidden");
     let board = document.querySelector("#my_board");
@@ -431,6 +435,10 @@ function updateTheBoard(characteristicToTest, questionNode) {
       `<h1>YOU UNMASK THE TERRORIST</h1><img src="` +
       guessWhoGame.theOne.img +
       `"/><p>Arstotzka is proud of you. Glory to Arstotzka !</p><button id="win-button">PLAY AGAIN</button>`;
+    let winButton = document.querySelector("#win-button");
+    winButton.onclick = function() {
+      location.reload();
+    };
   }
   updateCounter();
 }
@@ -476,17 +484,21 @@ var backgroundSound = new Audio(
   "../sons/Papers, Please - Theme Song-OBQE_TNI7zw.mp3"
 );
 
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
   displayCharacters();
   displayQuestions();
   displayHeader();
   displayCounter();
   displayNews();
-  backgroundSound.play();
+
   const selectBox = document.getElementById("questions");
   selectBox.onchange = function() {
     const characteristic = selectBox.options[selectBox.selectedIndex].value;
     const questionNode = selectBox.options[selectBox.selectedIndex];
     updateTheBoard(characteristic, questionNode);
+  };
+  const soundButton = document.getElementById("icon");
+  soundButton.onclick = function() {
+    backgroundSound.play();
   };
 });
