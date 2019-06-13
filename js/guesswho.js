@@ -41,6 +41,8 @@ class GuessWhoGame {
     return this.theOne[characteristic];
   }
 
+  guessWho() {}
+
   isLoose() {
     if (this.questionAsked === 0 && this.characters.length > 1) {
       return true;

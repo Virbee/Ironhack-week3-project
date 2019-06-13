@@ -231,6 +231,7 @@ header {
   flex-direction: row;
   background-color: black;
   margin: 0;
+  max-height: 82px;
 }
 
 #logos {
@@ -281,6 +282,8 @@ h1 {
   width: 100%;
   border: solid 1px white;
   border-right: none;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 #box1 {
@@ -291,6 +294,9 @@ h1 {
   margin: 0;
   background-color: black;
   color: white;
+  max-height: 55px;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 #news {
@@ -532,8 +538,8 @@ nav select {
   margin: 5px;
 }
 
-#theOne {
-  border: solid 2px yellow;
+.character span:hover {
+  color: darkgoldenrod;
 }
 
 .fade-out {

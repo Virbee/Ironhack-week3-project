@@ -349,10 +349,7 @@ const news = [
 function displayCharacters() {
   let characterDisplayed = "";
   guessWhoGame.characters.forEach(character => {
-    characterDisplayed += `<p class="character"`;
-    if (character == guessWhoGame.theOne) {
-      characterDisplayed += `id="theOne"`;
-    }
+    characterDisplayed += `<p class="character the-one"`;
     characterDisplayed += `>`;
     characterDisplayed += `<img src="` + character.img + `">`;
     characterDisplayed += `<span>` + character.name + `</span>`;
@@ -416,17 +413,38 @@ function updateTheBoard(characteristicToTest, questionNode) {
   removeCharacters();
   removeUsedQuestion(questionNode);
   if (guessWhoGame.isFinished() && guessWhoGame.isLoose()) {
-    document.querySelector("nav").setAttribute("class", "hidden");
-    let board = document.querySelector("#my_board");
-    board.setAttribute("id", "loose");
-    board.innerHTML =
-      `<h1>YOU FAILED TO UNMASK THE TERRORIST</h1><img src="` +
-      guessWhoGame.theOne.img +
-      `"/><p>You'll be sent to education camp.</p><button id="loose-button">PLAY AGAIN</button>`;
-    let looseButton = document.querySelector("#loose-button");
-    looseButton.onclick = function() {
-      location.reload();
-    };
+    document.querySelector(
+      "#message"
+    ).innerHTML = `<span>It's your last chance : take a guess and click on one of the character left</span>`;
+    document.querySelectorAll(".the-one span").forEach(function(character) {
+      character.onclick = function() {
+        if (character.textContent !== guessWhoGame.theOne.name) {
+          document.querySelector("nav").setAttribute("class", "hidden");
+          let board = document.querySelector("#my_board");
+          board.setAttribute("id", "loose");
+          board.innerHTML =
+            `<h1>YOU FAILED TO UNMASK THE TERRORIST</h1><img src="` +
+            guessWhoGame.theOne.img +
+            `"/><p>You'll be sent to education camp.</p><button id="loose-button">PLAY AGAIN</button>`;
+          let looseButton = document.querySelector("#loose-button");
+          looseButton.onclick = function() {
+            location.reload();
+          };
+        } else {
+          document.querySelector("nav").setAttribute("class", "hidden");
+          let board = document.querySelector("#my_board");
+          board.setAttribute("id", "win");
+          board.innerHTML =
+            `<h1>YOU UNMASK THE TERRORIST</h1><img src="` +
+            guessWhoGame.theOne.img +
+            `"/><p>Arstotzka is proud of you. Glory to Arstotzka !</p><button id="win-button">PLAY AGAIN</button>`;
+          let winButton = document.querySelector("#win-button");
+          winButton.onclick = function() {
+            location.reload();
+          };
+        }
+      };
+    });
   } else if (guessWhoGame.isFinished() && guessWhoGame.isWon()) {
     document.querySelector("nav").setAttribute("class", "hidden");
     let board = document.querySelector("#my_board");
@@ -459,12 +477,17 @@ function removeCharacters() {
 }
 
 function updateMessage(characteristic) {
-  var answer = guessWhoGame.giveAnAnswer(characteristic);
-  var messageToDisplay = characteristic;
+  let answer = guessWhoGame.giveAnAnswer(characteristic);
+  let messageToDisplay = "";
   if (answer) {
     messageToDisplay += `<span>YES !</span>`;
   } else {
     messageToDisplay += `<span>No...</span>`;
+  }
+  if (guessWhoGame.questionAsked === 2) {
+    messageToDisplay += `2 try : Arstotzka is counting on you`;
+  } else if (guessWhoGame.questionAsked === 1) {
+    messageToDisplay += `Only 1 try... don't deceive us`;
   }
   document.querySelector("#message").innerHTML = messageToDisplay;
 }
