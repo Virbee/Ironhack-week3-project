@@ -271,7 +271,7 @@ const characters = [
     male: true,
     female: false,
     yellowSkinned: false,
-    greenSkinned: true,
+    greenSkinned: false,
     purpleSkinned: false,
     blueSkinned: true,
     pinkSkinned: false,
@@ -341,6 +341,7 @@ const news = [
     text: "Claims Arstotzka unfairly taxes imporian goods"
   }
 ];
+
 ///////////////////////////////////////
 /////////////INITIALIZATION////////////
 ///////////////////////////////////////
@@ -373,7 +374,7 @@ function displayQuestions() {
 function displayHeader() {
   document.querySelector(
     "#message"
-  ).innerHTML = `Pick a question. Remember you have only ${
+  ).innerHTML = `Pick a question. Remember you only have ${
     guessWhoGame.questionAsked
   } try.`;
 }
@@ -392,8 +393,13 @@ function displayNews() {
   let c = 0;
   const interval = setInterval(() => {
     if (c < news.length) {
-      document.querySelector("#news h1").textContent = news[c].title;
-      document.querySelector("#news h4").textContent = news[c].text;
+      document.querySelector("#news").innerHTML =
+        `<h1 class="scale-in-center">` +
+        news[c].title +
+        `</h1>
+        <h4 class="scale-in-center">` +
+        news[c].text +
+        `</h4>`;
       c++;
     } else {
       c = 0;
@@ -410,13 +416,21 @@ function updateTheBoard(characteristicToTest, questionNode) {
   removeCharacters();
   removeUsedQuestion(questionNode);
   if (guessWhoGame.isFinished() && guessWhoGame.isLoose()) {
-    // mettre un délai
-    document.querySelector("#message").textContent =
-      "You failed to unmask the terrorist. You'll be sent to education camp.";
+    document.querySelector("nav").setAttribute("class", "hidden");
+    let board = document.querySelector("#my_board");
+    board.setAttribute("id", "loose");
+    board.innerHTML =
+      `<h1>YOU FAILED TO UNMASK THE TERRORIST</h1><img src="` +
+      guessWhoGame.theOne.img +
+      `"/><p>You'll be sent to education camp.</p><button id="loose-button">PLAY AGAIN</button>`;
   } else if (guessWhoGame.isFinished() && guessWhoGame.isWon()) {
-    // mettre un délai
-    document.querySelector("#message").textContent =
-      "You unmask the terrorist, Arstotzka is proud of you. Glory to Arstotzka !";
+    document.querySelector("nav").setAttribute("class", "hidden");
+    let board = document.querySelector("#my_board");
+    board.setAttribute("id", "win");
+    board.innerHTML =
+      `<h1>YOU UNMASK THE TERRORIST</h1><img src="` +
+      guessWhoGame.theOne.img +
+      `"/><p>Arstotzka is proud of you. Glory to Arstotzka !</p><button id="win-button">PLAY AGAIN</button>`;
   }
   updateCounter();
 }
@@ -458,6 +472,9 @@ function updateCounter() {
 ////////////////////////////////////////
 
 var guessWhoGame = new GuessWhoGame(characters);
+var backgroundSound = new Audio(
+  "../sons/Papers, Please - Theme Song-OBQE_TNI7zw.mp3"
+);
 
 document.addEventListener("DOMContentLoaded", function(event) {
   displayCharacters();
@@ -465,6 +482,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   displayHeader();
   displayCounter();
   displayNews();
+  backgroundSound.play();
   const selectBox = document.getElementById("questions");
   selectBox.onchange = function() {
     const characteristic = selectBox.options[selectBox.selectedIndex].value;

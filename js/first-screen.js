@@ -4,16 +4,16 @@ const firstSen =
 const secondSen =
   "Among the throngs of immigrants, visitors and people looking for work are hidden smugglers, spies and terrorists.";
 const thirdSen =
-  "You heard from a kolechian informant that terrorist would try to cross the border.";
-const fourthSen = "You have to unmask them before they commit an attack.";
-const fifthSen = "Someone who knows him has agreed to answer 3 questions.";
-const sixthSen = "Not a single more.";
+  "You heard from a kolechian informant that terrorist would try to cross the border. You can ask 3 questions to unmask them.";
+const fourthSen = "Not a single more.";
 
 ///////////////////////////////////////
 //////////FIRST SCREEN/////////////////
 ///////////////////////////////////////
+var backgroundSound = new Audio("../sons/machine-a-ecrire.mp3");
 
 function displayIntro() {
+  backgroundSound.play();
   let c = 0;
   const interval = setInterval(() => {
     console.log("tick");
@@ -29,6 +29,7 @@ function displayIntro() {
 }
 
 function displayFirstSen() {
+  backgroundSound.play();
   document.querySelector("#bandeau p").textContent = "";
   let c = 0;
   const interval = setInterval(() => {
@@ -39,7 +40,7 @@ function displayFirstSen() {
       clearInterval(interval);
       displaySecondSen();
     }
-  }, 80);
+  }, 100);
 }
 
 function displaySecondSen() {
@@ -53,7 +54,7 @@ function displaySecondSen() {
       clearInterval(interval);
       displayThirdSen();
     }
-  }, 80);
+  }, 100);
 }
 
 function displayThirdSen() {
@@ -67,7 +68,7 @@ function displayThirdSen() {
       clearInterval(interval);
       displayFourthSen();
     }
-  }, 80);
+  }, 100);
 }
 
 function displayFourthSen() {
@@ -79,34 +80,8 @@ function displayFourthSen() {
       c++;
     } else {
       clearInterval(interval);
-      displayFifthSen();
     }
-  }, 80);
-}
-
-function displayFifthSen() {
-  document.querySelector("#bandeau p").textContent = "";
-  let c = 0;
-  const interval = setInterval(() => {
-    if (c < fifthSen.length) {
-      document.querySelector("#bandeau p").textContent += fifthSen[c];
-      c++;
-    } else {
-      clearInterval(interval);
-      displaySixthSen();
-    }
-  }, 80);
-}
-
-function displaySixthSen() {
-  document.querySelector("#bandeau p").textContent = "";
-  let c = 0;
-  const interval = setInterval(() => {
-    if (c < sixthSen.length) {
-      document.querySelector("#bandeau p").textContent += sixthSen[c];
-      c++;
-    }
-  }, 80);
+  }, 100);
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
