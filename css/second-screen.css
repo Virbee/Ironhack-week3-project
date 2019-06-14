@@ -608,7 +608,7 @@ nav select {
   }
 
   #my_board {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1.5fr);
     grid-template-rows: repeat(5, 1fr);
   }
 

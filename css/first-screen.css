@@ -45,3 +45,9 @@
 .play-button:hover {
   background-color: goldenrod;
 }
+
+@media (max-width: 500px) {
+  #bandeau p {
+    font-size: 0.8em;
+  }
+}
