@@ -611,8 +611,4 @@ nav select {
     grid-template-columns: repeat(3, 1.5fr);
     grid-template-rows: repeat(5, 1fr);
   }
-
-  .character img {
-    max-height: 50px;
-  }
 }

@@ -506,6 +506,7 @@ var guessWhoGame = new GuessWhoGame(characters);
 var backgroundSound = new Audio(
   "./sons/Papers, Please - Theme Song-OBQE_TNI7zw.mp3"
 );
+var state = true;
 
 document.addEventListener("DOMContentLoaded", function() {
   displayCharacters();
@@ -522,6 +523,12 @@ document.addEventListener("DOMContentLoaded", function() {
   };
   const soundButton = document.getElementById("icon");
   soundButton.onclick = function() {
-    backgroundSound.play();
+    if (state) {
+      backgroundSound.play();
+      state = !state;
+    } else {
+      backgroundSound.pause();
+      state = !state;
+    }
   };
 });
