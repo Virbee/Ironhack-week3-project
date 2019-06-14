@@ -244,7 +244,6 @@ header {
   justify-content: flex-end;
   margin: 0;
   padding: 0;
-  width: 150px;
 }
 
 #box3 {
@@ -434,7 +433,6 @@ h1 {
 /*------------------------------------
 --------------NAV BAR-----------------
 ------------------------------------*/
-
 nav {
   background-color: goldenrod;
   height: 80px;
@@ -490,7 +488,6 @@ nav select {
 
 #board-container {
   width: 80%;
-  height: 80vh;
   margin: 0px auto 10px;
   border-radius: 84px;
   display: flex;
@@ -512,7 +509,6 @@ nav select {
 
 #my_board {
   width: 90%;
-  height: 90%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -521,11 +517,11 @@ nav select {
 .character {
   background: lightgrey;
   border-radius: 10px;
-  margin: 10px 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 10px 10px;
 }
 
 .character img {
@@ -588,4 +584,35 @@ nav select {
   border: solid 1px black;
   font-family: "VT323", monospace;
   font-size: 2em;
+}
+
+@media (max-width: 500px) {
+  header {
+    font-size: 0.6em;
+    max-height: 50px;
+  }
+
+  nav {
+    font-size: 0.6em;
+    max-height: 50px;
+    text-align: center;
+  }
+
+  nav #icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  #board-container {
+    flex: 0;
+  }
+
+  #my_board {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
+
+  .character img {
+    max-height: 50px;
+  }
 }

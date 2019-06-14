@@ -4,7 +4,7 @@ const firstSen =
 const secondSen =
   "Among the throngs of immigrants, visitors and people looking for work are hidden smugglers, spies and terrorists.";
 const thirdSen =
-  "You heard from a kolechian informant that terrorist would try to cross the border. You can ask 3 questions to unmask them.";
+  "You heard from a kolechian informant that a terrorist would try to cross the border. You can ask 3 questions to unmask them.";
 const fourthSen = "Not a single more.";
 
 ///////////////////////////////////////
