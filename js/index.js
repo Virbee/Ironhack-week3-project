@@ -1,7 +1,7 @@
 const characters = [
   {
     name: "Katia",
-    img: "../images/female4.png",
+    img: "./images/female4.png",
     male: false,
     female: true,
     yellowSkinned: false,
@@ -20,7 +20,7 @@ const characters = [
   },
   {
     name: "Laura",
-    img: "../images/female1.png",
+    img: "./images/female1.png",
     male: false,
     female: true,
     yellowSkinned: false,
@@ -39,7 +39,7 @@ const characters = [
   },
   {
     name: "Lelia",
-    img: "../images/female5.png",
+    img: "./images/female5.png",
     male: false,
     female: true,
     yellowSkinned: false,
@@ -58,7 +58,7 @@ const characters = [
   },
   {
     name: "Maria",
-    img: "../images/female6.png",
+    img: "./images/female6.png",
     male: false,
     female: true,
     yellowSkinned: false,
@@ -77,7 +77,7 @@ const characters = [
   },
   {
     name: "Nadia",
-    img: "../images/female2.png",
+    img: "./images/female2.png",
     male: false,
     female: true,
     yellowSkinned: false,
@@ -96,7 +96,7 @@ const characters = [
   },
   {
     name: "Naïma",
-    img: "../images/female3.png",
+    img: "./images/female3.png",
     male: false,
     female: true,
     yellowSkinned: false,
@@ -115,7 +115,7 @@ const characters = [
   },
   {
     name: "Karl",
-    img: "../images/male3.png",
+    img: "./images/male3.png",
     male: true,
     female: false,
     yellowSkinned: true,
@@ -134,7 +134,7 @@ const characters = [
   },
   {
     name: "Momo",
-    img: "../images/male6.png",
+    img: "./images/male6.png",
     male: true,
     female: false,
     yellowSkinned: false,
@@ -153,7 +153,7 @@ const characters = [
   },
   {
     name: "Nadir",
-    img: "../images/male8.png",
+    img: "./images/male8.png",
     male: true,
     female: false,
     yellowSkinned: true,
@@ -172,7 +172,7 @@ const characters = [
   },
   {
     name: "Pablo",
-    img: "../images/male2.png",
+    img: "./images/male2.png",
     male: true,
     female: false,
     yellowSkinned: false,
@@ -191,7 +191,7 @@ const characters = [
   },
   {
     name: "Piotr",
-    img: "../images/male4.png",
+    img: "./images/male4.png",
     male: true,
     female: false,
     yellowSkinned: false,
@@ -210,7 +210,7 @@ const characters = [
   },
   {
     name: "Sergueï",
-    img: "../images/male5.png",
+    img: "./images/male5.png",
     male: true,
     female: false,
     yellowSkinned: false,
@@ -229,7 +229,7 @@ const characters = [
   },
   {
     name: "Stefan",
-    img: "../images/male1.png",
+    img: "./images/male1.png",
     male: true,
     female: false,
     yellowSkinned: false,
@@ -248,7 +248,7 @@ const characters = [
   },
   {
     name: "Viktor",
-    img: "../images/male9.png",
+    img: "./images/male9.png",
     male: true,
     female: false,
     yellowSkinned: false,
@@ -267,7 +267,7 @@ const characters = [
   },
   {
     name: "Vladimir",
-    img: "../images/male7.png",
+    img: "./images/male7.png",
     male: true,
     female: false,
     yellowSkinned: false,
@@ -504,7 +504,7 @@ function updateCounter() {
 
 var guessWhoGame = new GuessWhoGame(characters);
 var backgroundSound = new Audio(
-  "../sons/Papers, Please - Theme Song-OBQE_TNI7zw.mp3"
+  "./sons/Papers, Please - Theme Song-OBQE_TNI7zw.mp3"
 );
 
 document.addEventListener("DOMContentLoaded", function() {
